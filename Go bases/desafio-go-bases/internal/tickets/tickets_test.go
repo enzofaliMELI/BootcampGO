@@ -9,7 +9,7 @@ import (
 
 func TestGetTotalTickets(t *testing.T) {
 
-	filename := "tickets.csv"
+	filename := "../../tickets.csv"
 	OpenTickets(filename)
 
 	// Input/Output

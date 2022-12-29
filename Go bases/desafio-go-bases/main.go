@@ -16,7 +16,7 @@ func main() {
 		fmt.Println("Ejecución finalizada.")
 	}()
 
-	filename := "tickets.csv"
+	filename := "./tickets.csv"
 
 	err := tickets.OpenTickets(filename)
 	if err != nil {
