@@ -52,7 +52,7 @@ func main() {
 		fmt.Println("Error in GetCountByPeriod().")
 		panic(err)
 	}
-	fmt.Printf("El total de personas que viajaron de %s fue de: %v \n\n", tiempo, subtotal)
+	fmt.Printf("El total de personas que viajaron de %s fue de: %v \n", tiempo, subtotal)
 
 	// ejemplo 3
 	average, err := tickets.AverageDestination(pais)

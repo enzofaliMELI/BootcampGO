@@ -139,7 +139,6 @@ func TravelersInTimeRange(start, end int) (count int, err error) {
 			break
 		}
 	}
-	fmt.Println()
 	return
 }
 
