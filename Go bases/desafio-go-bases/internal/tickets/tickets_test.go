@@ -151,6 +151,5 @@ func TestAverageDestination(t *testing.T) {
 		fmt.Println(errBr)
 	} else {
 		assert.Equal(t, esperadoBr, resultadoBr, "Deben de ser iguales")
-
 	}
 }
