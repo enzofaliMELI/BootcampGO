@@ -13,6 +13,7 @@ func main() {
 			fmt.Println(err)
 			fmt.Println("Se detectaron varios errores en tiempo de ejecución.")
 		}
+		fmt.Println("-------------------------------------------------------")
 		fmt.Println("Ejecución finalizada.")
 	}()
 
@@ -60,6 +61,5 @@ func main() {
 		fmt.Println("Error in AverageDestination().")
 		panic(err)
 	}
-	fmt.Printf("El promedio de personas que viajaron a %s fue de: %v \n\n", pais, average)
-
+	fmt.Printf("El promedio de personas que viajaron a %s fue de: %v \n", pais, average)
 }

@@ -11,6 +11,7 @@ func TestGetTotalTickets(t *testing.T) {
 
 	filename := "../../tickets.csv"
 	OpenTickets(filename)
+	defer CloseTickets()
 
 	// Input/Output
 	// Caso 1:
@@ -41,11 +42,14 @@ func TestGetTotalTickets(t *testing.T) {
 		fmt.Println(errBr)
 	} else {
 		assert.Equal(t, esperadoBr, resultadoBr, "Deben de ser iguales")
-
 	}
 }
 
 func TestGetCountByPeriod(t *testing.T) {
+
+	filename := "../../tickets.csv"
+	OpenTickets(filename)
+	defer CloseTickets()
 
 	// Input/Output
 	// Caso 1:
@@ -112,6 +116,10 @@ func TestGetCountByPeriod(t *testing.T) {
 }
 
 func TestAverageDestination(t *testing.T) {
+
+	filename := "../../tickets.csv"
+	OpenTickets(filename)
+	defer CloseTickets()
 
 	// Input/Output
 	// Caso 1:

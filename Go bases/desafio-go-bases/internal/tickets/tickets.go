@@ -59,6 +59,11 @@ func OpenTickets(filename string) (err error) {
 	return
 }
 
+func CloseTickets() (err error) {
+	tickets = nil
+	return
+}
+
 func PrintTickets() (err error) {
 	fmt.Println("Customers:")
 	for _, c := range tickets {
