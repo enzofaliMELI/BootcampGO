@@ -7,9 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+const filename = "../../tickets.csv"
+
 func TestGetTotalTickets(t *testing.T) {
 
-	filename := "../../tickets.csv"
 	OpenTickets(filename)
 	defer CloseTickets()
 
@@ -47,7 +48,6 @@ func TestGetTotalTickets(t *testing.T) {
 
 func TestGetCountByPeriod(t *testing.T) {
 
-	filename := "../../tickets.csv"
 	OpenTickets(filename)
 	defer CloseTickets()
 
@@ -117,7 +117,6 @@ func TestGetCountByPeriod(t *testing.T) {
 
 func TestAverageDestination(t *testing.T) {
 
-	filename := "../../tickets.csv"
 	OpenTickets(filename)
 	defer CloseTickets()
 

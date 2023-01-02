@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/bootcamp-go/desafio-go-bases/internal/tickets"
 )
@@ -10,14 +11,12 @@ func main() {
 
 	defer func() {
 		if err := recover(); err != nil {
-			fmt.Println(err)
-			fmt.Println("Se detectaron varios errores en tiempo de ejecución.")
+			fmt.Println("Se detectaron errores en tiempo de ejecución.\nEjecución finalizada.")
 		}
-		fmt.Println("-------------------------------------------------------")
-		fmt.Println("Ejecución finalizada.")
 	}()
 
-	filename := "./tickets.csv"
+	os.Setenv("PATHCSV", "./tickets.csv")
+	filename, _ := os.LookupEnv("PATHCSV")
 
 	err := tickets.OpenTickets(filename)
 	if err != nil {
