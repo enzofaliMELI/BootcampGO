@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 
@@ -33,6 +34,23 @@ func main() {
 
 		mensaje := fmt.Sprintf("Hola %s %s", d.Nombre, d.Apellido)
 		ctx.JSON(http.StatusOK, gin.H{"mensaje": mensaje})
+	})
+
+	router.POST("/saludito", func(c *gin.Context) {
+
+		data, err := c.GetRawData()
+		if err != nil {
+			panic(err)
+		}
+
+		var d datos
+
+		if err := json.Unmarshal(data, &d); err != nil {
+			c.String(http.StatusBadRequest, "Error")
+			return
+		}
+		mensaje := fmt.Sprintf("Hola %s %s", d.Nombre, d.Apellido)
+		c.String(http.StatusOK, mensaje)
 	})
 
 	// Corremos nuestro servidor en el puerto 8080
